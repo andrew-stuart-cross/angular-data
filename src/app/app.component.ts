@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { LineComponent } from './line/line.component';
 import { BarComponent } from './bar/bar.component';
 import { EconomyRateComponent } from './economy-rate/economy-rate.component';
+import { StrikeRateComponent } from './strike-rate/strike-rate.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, LineComponent, BarComponent, EconomyRateComponent],
+  imports: [CommonModule, RouterOutlet, LineComponent, BarComponent, EconomyRateComponent, StrikeRateComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
