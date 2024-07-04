@@ -35,9 +35,20 @@ export class BarComponent {
     indexAxis: 'y',
     plugins: {
       title: {
-          display: true,
-          text: 'Custom Chart Title'
+        display: true,
+        text: 'JM Anderson'
+      },
+      subtitle: {
+        display: true,
+        text: 'Matches and wickets taken by opponent',
+        // color: 'blue',
+        // font: {
+        //   size: 12,
+        //   family: 'tahoma',
+        //   weight: 'normal',
+        //   style: 'italic'
+        // }
       }
-  }
+    }
   };
 }

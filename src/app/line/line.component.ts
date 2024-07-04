@@ -51,19 +51,12 @@ export class LineComponent {
   }
 
   public lineChartOptions: ChartConfiguration<'line'>['options'] = {
-    responsive: true
-  };
-
-  public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: true,
-    indexAxis: 'y',
     plugins: {
       title: {
-          display: true,
-          text: 'Custom Chart Title'
+        display: true,
+        text: 'Custom Chart Title'
       }
-  }
+    }
   };
-
 }
-
