@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal, ViewChild } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { IChartData } from '../i-chart-data.dto';
@@ -11,6 +11,11 @@ import { IChartData } from '../i-chart-data.dto';
   styleUrl: './wkts-match.component.css'
 })
 export class WktsMatchComponent {
+  @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
+
+  // public chartPlugins = [ChartDataLabels];
+
+  public btnText = signal('show 5w count');
   public data: IChartData;
 
   constructor() {
@@ -38,6 +43,18 @@ export class WktsMatchComponent {
     }
   }
 
+  public toggleBar(): void {
+    if (this.data?.chartData[0].hidden){
+      this.data.chartData[0].hidden=false;
+      this.chart?.update();
+      this.btnText.set('hide 5w count');
+    } else {
+      this.data.chartData[0].hidden=true;
+      this.chart?.update();
+      this.btnText.set('show 5w count');
+    }
+  }
+
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: true,
     scales: {
@@ -48,11 +65,11 @@ export class WktsMatchComponent {
     plugins: {
       title: {
         display: true,
-        text: 'JM Anderson'
+        text: 'Cumulative wickets per match'
       },
       subtitle: {
         display: true,
-        text: 'Wickets per match analysis',
+        text: 'JM Anderson',
         // color: 'blue',
         // font: {
         //   size: 12,

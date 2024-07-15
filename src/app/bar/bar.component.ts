@@ -53,7 +53,6 @@ export class BarComponent {
     }
   }
 
-
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: true,
     indexAxis: 'y',
