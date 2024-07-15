@@ -1,5 +1,7 @@
 <div class="graph">
   <canvas baseChart [type]="'bar'" [legend]="true" [datasets]="data.chartData" [labels]="data.chartLabels"
-    [options]="barChartOptions">
+    [options]="barChartOptions" [plugins]="chartPlugins">
   </canvas>
 </div>
+
+<button (click)="toggle5w()">{{btnText()}}</button>
