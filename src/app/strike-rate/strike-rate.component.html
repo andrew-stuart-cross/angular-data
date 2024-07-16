@@ -1,7 +1,10 @@
 <div class="graph">
   <canvas baseChart [type]="'line'" [legend]="true" [datasets]="data.chartData" [labels]="data.chartLabels"
-    [options]="lineChartOptions">
+    [options]="lineChartOptions" [plugins]="chartPlugins">
   </canvas>
 </div>
 
-<p>ideas: hide initial 'outlier' values...</p>
+<button (click)="remove()">remove</button>
+
+
+<p>ideas: hide initial 'outlier' values........remove data from 2003, first 5 Tests (first 8 values)</p>
