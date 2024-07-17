@@ -39,13 +39,22 @@ export class AveStrikeMultiAxisLineComponent implements OnInit {
   }
 
   private _getData(): void {
-    this._service.getCumulativeAverageStrikeSeries()
+    this._service.getCumulativeAverageSeries()
       .pipe()
       .subscribe({
         next: (data: IChartData) => {
           this.bowlingAverageStrikeData.labels = data.chartLabels,
-            this.bowlingAverageStrikeData.datasets[0].data = data.chartData[0],
-            this.bowlingAverageStrikeData.datasets[1].data = data.chartData[1]
+            this.bowlingAverageStrikeData.datasets[0].data = data.chartData[0]
+        },
+        error: (e) => { console.log(e); }
+      });
+
+    this._service.getCumulativeStrikeRateSeries()
+      .pipe()
+      .subscribe({
+        next: (data: IChartData) => {
+          this.bowlingAverageStrikeData.labels = data.chartLabels,
+            this.bowlingAverageStrikeData.datasets[1].data = data.chartData[0]
         },
         error: (e) => { console.log(e); }
       });
