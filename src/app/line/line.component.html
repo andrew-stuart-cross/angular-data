@@ -1,7 +1,9 @@
 <h2>Cumulative average and different moving averages</h2>
 
+@if (loaded()) {
 <div class="graph">
-  <canvas baseChart [type]="'line'" [legend]="true" [datasets]="data.chartData" [labels]="data.chartLabels"
-    [options]="lineChartOptions">
+  <canvas baseChart [type]="'line'" [legend]="true" [datasets]="bowlingAverageData.datasets"
+    [labels]="bowlingAverageData.labels" [options]="lineChartOptions">
   </canvas>
 </div>
+}
