@@ -2,7 +2,6 @@ import { Component, OnInit, signal, ViewChild } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { IChartData } from '../i-chart-data.dto';
-import { Observable } from 'rxjs';
 import { DataFetchService } from '../data-fetch.service';
 
 @Component({
